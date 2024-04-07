@@ -140,7 +140,13 @@ class BinarySearchTree{
    * @return Largest integer value in the tree
    */
    public int getMax(Node root){
-	  //implement me
+	  if (root == null){
+         return -1;
+      }
+      if (root.right != null){
+         return getMin(root.right);
+      }
+      return root.value;
    }
    
    

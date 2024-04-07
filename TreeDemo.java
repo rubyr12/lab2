@@ -15,8 +15,11 @@ class BinarySearchTree{
    Node root;
    
    
-   /*
-   recursive insert method
+   /**
+   * Inserts a given integer value into the tree
+   * @param root Root node of the tree
+   * @param value Integer value to insert
+   * @return Root after insertion
    */
    public Node insert(Node root, int value){
       //base case
@@ -38,16 +41,25 @@ class BinarySearchTree{
    
    
    /*
-   pre-order traversal
+   * Traverses the tree using pre order
+   * @param root Root node of the tree
    */
    public void preOrderTraversal(Node root){
-      //implement me
+      // base case
+      if (root == null){
+         return;
+      }
+      System.out.print(root.value + ",");
+      // recursive steps
+      preOrderTraversal(root.left);
+      preOrderTraversal(root.right);
    }
 
    
    
    /*
-   in-order traversal
+   * Traverses the tree using in order
+   * @param root Root node of the tree
    */
    public void inOrderTraversal(Node root){
       //implement me
@@ -56,7 +68,8 @@ class BinarySearchTree{
    
    
    /*
-   post-order traversal
+   * Traverse the tree using post order
+   * @param root Root node of the tree
    */
    public void postOrderTraversal(Node root){
       //implement me
@@ -65,8 +78,10 @@ class BinarySearchTree{
    
    
    /*
-   a method to find the node in the tree
-   with a specific value
+   * Finds the node in the tree with a given value
+   * @param root Root node of the tree
+   * @param key Integer key to find
+   * @return Whether or not key was found
    */
    public boolean find(Node root, int key){
 	  //implement me
@@ -76,8 +91,9 @@ class BinarySearchTree{
    
    
    /*
-   a method to find the node in the tree
-   with a smallest key
+   * Gets the node with the smallest value
+   * @param root Root node of the tree
+   * @return Smallest integer value in tree
    */
    public int getMin(Node root){
       //implement me
@@ -86,8 +102,9 @@ class BinarySearchTree{
   
   
    /*
-   a method to find the node in the tree
-   with a largest key
+   * Gets the node with the largest value
+   * @param root Root node of the tree
+   * @return Largest integer value in the tree
    */
    public int getMax(Node root){
 	  //implement me
@@ -96,8 +113,10 @@ class BinarySearchTree{
    
    
    /*
-   this method will not compile until getMax
-   is implemented
+   * Deletes the node with the given key value
+   * @param root Root node of the tree
+   * @param Integer key value to delete
+   * @return The root after deletion
    */
    public Node delete(Node root, int key){
       

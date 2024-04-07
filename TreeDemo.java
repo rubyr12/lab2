@@ -123,7 +123,13 @@ class BinarySearchTree{
    * @return Smallest integer value in tree
    */
    public int getMin(Node root){
-      //implement me
+      if (root == null){
+         return -1;
+      }
+      if (root.left != null){
+         return getMin(root.left);
+      }
+      return root.value;
    }
   
   

@@ -62,7 +62,14 @@ class BinarySearchTree{
    * @param root Root node of the tree
    */
    public void inOrderTraversal(Node root){
-      //implement me
+      // base case
+      if (root == null){
+         return;
+      }
+      // recursive steps
+      inOrderTraversal(root.left);
+      System.out.print(root.value + ",");
+      inOrderTraversal(root.right);
    }
    
    

@@ -98,8 +98,21 @@ class BinarySearchTree{
    * @return Whether or not key was found
    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+	   // base case
+      if (root == null){
+         return false;
+      }
+      // recursive steps
+      if(root.value == key){
+         return true;
+      }
+      else if(key < root.value){
+         return(find(root.left, key));
+      }
+      else{
+         return(find(root.right, key));
+      }
+                
    }
    
    

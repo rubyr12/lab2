@@ -79,7 +79,14 @@ class BinarySearchTree{
    * @param root Root node of the tree
    */
    public void postOrderTraversal(Node root){
-      //implement me
+      // base case
+      if (root == null){
+         return;
+      }
+      // recursive steps
+      postOrderTraversal(root.left);
+      postOrderTraversal(root.right);
+      System.out.print(root.value + ",");
    }
    
    
